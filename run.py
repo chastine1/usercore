@@ -40,17 +40,17 @@ def display_users():
 
 def main():
     print("Hello Welcome to your contact list. What is your name?")
-            user_name = input()
+    user_name = input()
 
-            print(f"Hello {username}. what would you like to do?")
-            print('\n')
+    print(f"Hello {calinemucyo}. what would you like to do?")
+    print('\n')
 
-            while True:
-                    print("Use these short codes : cc - create a new user's contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
+    while True:
+                print("Use these short codes : cc - create a new user's contact, dc - display contacts, fc -find a contact, ex -exit the contact list ")
 
-                    short_code = input().lower()
+                short_code = input().lower()
 
-                    if short_code == 'cc':
+                if short_code == 'cc':
                             print("New Contact")
                             print("-"*10)
 
@@ -75,7 +75,7 @@ def main():
                             print(f"New user {f_name} {l_name} created")
                             print ('\n')
 
-                    elif short_code == 'dc':
+                elif short_code == 'dc':
 
                             if display_user():
                                     print("Here is a list of all your contacts")
@@ -90,7 +90,7 @@ def main():
                                     print("You dont seem to have any contacts saved yet")
                                     print('\n')
 
-                    elif short_code == 'fc':
+                elif short_code == 'fc':
 
                             print("Enter the number you want to search for")
 
@@ -105,10 +105,12 @@ def main():
                             else:
                                     print("That contact does not exist")
 
-                    elif short_code == "ex":
+                elif short_code == "ex":
                             print("Bye .......")
                             break
-                    else:
+                else:
                             print("I really didn't get that. Please use the short codes")
 
 
+if __name__ == '__main__':
+         main()
