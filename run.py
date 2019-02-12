@@ -42,7 +42,7 @@ def main():
     print("Hello Welcome to your contact list. What is your name?")
             user_name = input()
 
-            print(f"Hello {user_name}. what would you like to do?")
+            print(f"Hello {username}. what would you like to do?")
             print('\n')
 
             while True:
@@ -60,26 +60,29 @@ def main():
                             print("Last name ...")
                             l_name = input()
 
-                            print("Phone number ...")
+                            print("number ...")
                             p_number = input()
 
-                            print("Email address ...")
+                            print("username")
+                            p_number = input()
+
+                            print("password")
                             e_address = input()
 
 
-                            save_contacts(create_contact(f_name,l_name,p_number,e_address)) # create and save new contact.
+                            save_users(create_contact(first_name,last_name,number,username,password)) # create and save new contact.
                             print ('\n')
-                            print(f"New Contact {f_name} {l_name} created")
+                            print(f"New user {f_name} {l_name} created")
                             print ('\n')
 
                     elif short_code == 'dc':
 
-                            if display_contacts():
+                            if display_user():
                                     print("Here is a list of all your contacts")
                                     print('\n')
 
-                                    for contact in display_contacts():
-                                            print(f"{contact.first_name} {contact.last_name} .....{contact.phone_number}")
+                                    for user in display_users():
+                                            print(f"{user.first_name} {user.last_name} .....{user.number}")
 
                                     print('\n')
                             else:
@@ -92,13 +95,13 @@ def main():
                             print("Enter the number you want to search for")
 
                             search_number = input()
-                            if check_existing_contacts(search_number):
-                                    search_contact = find_contact(search_number)
-                                    print(f"{search_contact.first_name} {search_contact.last_name}")
+                            if check_existing_users(search_number):
+                                    search_user = find_user(search_number)
+                                    print(f"{search_user.first_name} {search_user.last_name}")
                                     print('-' * 20)
 
-                                    print(f"Phone number.......{search_contact.phone_number}")
-                                    print(f"Email address.......{search_contact.email}")
+                                    print(f"number.......{search_user.number}")
+                                    print(f"username.......{search_user.username}")
                             else:
                                     print("That contact does not exist")
 
