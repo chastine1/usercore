@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.6
 from core import User # importing the objects to core
 
-def create_user(first_name,last_name,number,usename,password):
+def create_user(first_name,last_name,number,username,password):
     '''
     Function to create a new user's contact
     '''
@@ -12,7 +12,7 @@ def save_users(user):
     '''
     Function to save user's contact
     '''
-    user.save_users()
+    User.save_user()
 
 def del_user(contact):
     '''
@@ -40,9 +40,9 @@ def display_users():
 
 def main():
     print("Hello Welcome to your contact list. What is your name?")
-    user_name = input()
+    username = input()
 
-    print(f"Hello {calinemucyo}. what would you like to do?")
+    print(f"Hello {username}. what would you like to do?")
     print('\n')
 
     while True:
@@ -55,40 +55,40 @@ def main():
                             print("-"*10)
 
                             print ("First name ....")
-                            f_name = input()
+                            first_name = input()
 
                             print("Last name ...")
-                            l_name = input()
+                            last_name = input()
 
                             print("number ...")
-                            p_number = input()
+                            number = input()
 
                             print("username")
-                            p_number = input()
+                            username = input()
 
                             print("password")
-                            e_address = input()
+                            password = input()
 
 
-                            save_users(create_user(first_name,last_name,number,username,password)) # create and save new contact.
+                            save_user(create_user(first_name,last_name,number,username,password)) # create and save new contact.
                             print ('\n')
-                            print(f"New user {f_name} {l_name} created")
+                            print(f"New user {first_name} {last_name} {number} {username} {password} created")
                             print ('\n')
 
                 elif short_code == 'dc':
 
-                            if display_user():
-                                    print("Here is a list of all your contacts")
-                                    print('\n')
+                        if display_user():
+                                print("Here is a list of all your contacts")
+                                print('\n')
 
-                                    for user in display_users():
-                                            print(f"{user.first_name} {user.last_name} .....{user.number}")
+                                for user in display_users():
+                                        print(f"{user.first_name} {user.last_name} .....{user.number}")
 
-                                    print('\n')
-                            else:
-                                    print('\n')
-                                    print("You dont seem to have any contacts saved yet")
-                                    print('\n')
+                                print('\n')
+                        else:
+                                print('\n')
+                                print("You dont seem to have any contacts saved yet")
+                                print('\n')
 
                 elif short_code == 'fc':
 
@@ -113,4 +113,5 @@ def main():
 
 
 if __name__ == '__main__':
-         main()
+
+    main()
