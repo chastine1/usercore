@@ -3,7 +3,7 @@ from core import User # importing the objects to core
 
 def create_user(first_name,last_name,number,usename,password):
     '''
-    Function to create a new contact
+    Function to create a new user's contact
     '''
     new_user = User(first_name,last_name,number,username,password)
     return new_user
