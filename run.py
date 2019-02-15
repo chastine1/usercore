@@ -1,5 +1,7 @@
 #!/usr/bin/env python3.6
 from core import User # importing the objects to core
+# import ptvsd
+
 
 def create_user(first_name,last_name,number,username,password):
     '''
@@ -8,11 +10,11 @@ def create_user(first_name,last_name,number,username,password):
     new_user = User(first_name,last_name,number,username,password)
     return new_user
 
-def save_users(user):
+def save_user(user):
     '''
     Function to save user's contact
     '''
-    User.save_user()
+    user.save_user()
 
 def del_user(contact):
     '''
@@ -26,11 +28,11 @@ def find_user(number):
     '''
     return User.find_by_number(number)
 
-def check_existing_contacts(number):
+def User_exist(number):
     '''
     Function that check if a contact exists with that number and return a Boolean
     '''
-    return User.user_exist(number)
+    return User.User_exist(number)
 
 def display_users():
     '''
@@ -40,9 +42,9 @@ def display_users():
 
 def main():
     print("Hello Welcome to your contact list. What is your name?")
-    username = input()
+    userName = input()
 
-    print(f"Hello {username}. what would you like to do?")
+    print(f"Hello {userName}. what would you like to do?")
     print('\n')
 
     while True:
@@ -77,12 +79,12 @@ def main():
 
                 elif short_code == 'dc':
 
-                        if display_user():
+                        if display_users():
                                 print("Here is a list of all your contacts")
                                 print('\n')
 
                                 for user in display_users():
-                                        print(f"{user.first_name} {user.last_name} .....{user.number}")
+                                    print(f"{user.first_name} {user.last_name} {user.number} {user.username} {user.password}")
 
                                 print('\n')
                         else:
@@ -95,7 +97,7 @@ def main():
                             print("Enter the number you want to search for")
 
                             search_number = input()
-                            if check_existing_users(search_number):
+                            if User_exist(search_number):
                                     search_user = find_user(search_number)
                                     print(f"{search_user.first_name} {search_user.last_name}")
                                     print('-' * 20)
