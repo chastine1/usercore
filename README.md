@@ -1,7 +1,4 @@
-
-This is a website housing a collection of my projects undertaken in the first week of Moringa Prep at Moringa School.
-
-
+###Independent project
 
 ##Description
 
@@ -15,6 +12,12 @@ find them, and
 ##programming language:
 python
 
+##License and copylights
+
+Licensee desires to obtain, and Licensor has agreed to grant, a license authorizing the use of the Work by Licensee in accordance with the terms and conditions of this Agreement.
+
 ## Author:
 
 BATAMURIZA Chastine
+
+
